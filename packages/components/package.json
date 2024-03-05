@@ -1,0 +1,28 @@
+{
+  "name": "a-draggleble-component",
+  "description": "一个可以托拽的vue3+typescript组件，主要应用场景：两个子空间的拖拽状态的相互转换",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "xinhong.wang",
+  "license": "ISC",
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "vite-plugin-dts": "^3.6.4"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "mitt": "^3.0.1",
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
+}
