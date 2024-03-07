@@ -2,6 +2,7 @@
 import { reactive, ref } from "vue"
 import { ADragglebleMain } from "a-draggleble-component"
 import { ListProps } from "a-draggleble-component/dist/a-draggleble-main/type.d"
+import 'a-draggleble-component/dist/style.css'
 
 const demoList: ListProps = reactive([])
 const childNum = ref(3) // 自定义显示个数 改成4 试试
@@ -11,11 +12,13 @@ for (let i = 0; i < childNum.value; i++) {
     pro: 'worker' + i
   }
 }
+const demoHeight = ref(600);
+
 </script>
 
 <template>
-  <div class="page-bk"></div>
-  <ADragglebleMain :containerIndex="10" :childList="demoList" :childNum="childNum">
+  <div class="page-bk" :style="{ height: demoHeight + 'px' }"></div>
+  <ADragglebleMain :childList="demoList" :childNum="childNum" :mainContainerStyle="{ height: demoHeight }">
     <template v-slot:childSlot1>
       <div class="demo-child demo-child-1">默认</div>
     </template>
@@ -55,8 +58,8 @@ for (let i = 0; i < childNum.value; i++) {
 }
 
 .page-bk {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  position: relative;
   background: #646cffaa;
 }
 

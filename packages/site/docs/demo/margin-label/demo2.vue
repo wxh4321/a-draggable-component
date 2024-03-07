@@ -1,23 +1,18 @@
 <script setup lang="ts">
 import { MarginLabel } from "a-draggleble-component"
-import { reactive } from "vue";
-const win = reactive({
-  height: window.innerHeight,
-  width: window.innerWidth
-});
+import 'a-draggleble-component/dist/style.css'
+import { ref } from "vue";
+
+const demoHeight = ref(600);
+const demoWidth = ref(1039);
+
 </script>
 
 <template>
   <div class="page-container">
-    <MarginLabel :containerIndex="12" :height="win.height * 0.4" :width="win.width" :top="win.height * 0.6">
+    <MarginLabel :containerIndex="12" :height="demoHeight" :width="demoWidth" :top="demoHeight * 0.6">
       <template v-slot:default>
         <div class="page-bk">
-          <!-- <MarginLabel :containerIndex="11" 
-              :topStyle="{background:'red'}"
-              :leftStyle="{background:'red'}"
-              :bottomStyle="{background:'red'}"
-              :rightStyle="{background:'red'}"
-            > -->
           <MarginLabel :containerIndex="11" :height="200" :width="200" :canDragSquare="true">
             <template v-slot:default>
               <div class="demo-child demo-child-1 pos-1">默认</div>
@@ -41,9 +36,6 @@ const win = reactive({
 }
 
 .demo-child {
-  // height: 200px;
-  // width: 200px;
-  // flex: 1;
   width: 100%;
   height: 100%;
 }
@@ -58,17 +50,14 @@ const win = reactive({
 }
 
 .page-bk {
-  // top: 60vh; 不要写在这里
-  position: relative;
-  // width: 100vw; 不要写vh vw
-  // height: 80vh;
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: 200px;
   background: #646cffaa;
 }
 
 .page-container {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 600px;
 }
 </style>

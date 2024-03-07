@@ -155,7 +155,7 @@ const clickContainer = () => {
 </script>
 
 <template>
-    <div class="container" :style="{
+    <div class="margin-label-container" :style="{
         zIndex: containerIndex,
         ...(props.componentStyle || {}),
         ...(width && { width: width + 'px' }),
@@ -184,7 +184,7 @@ const clickContainer = () => {
 </template>
 
 <style lang="less" scoped>
-.container {
+.margin-label-container {
     width: 200px;
     height: 200px;
     position: absolute;

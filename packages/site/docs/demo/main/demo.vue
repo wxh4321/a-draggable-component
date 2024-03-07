@@ -3,7 +3,7 @@ import { reactive, ref } from "vue"
 import { ADragglebleMain } from "a-draggleble-component"
 import { MarginLabel } from "a-draggleble-component"
 import { ListProps } from "a-draggleble-component/dist/a-draggleble-main/type.d"
-
+import 'a-draggleble-component/dist/style.css'
 const demoList: ListProps = reactive([])
 const childNum = ref(3) // 自定义显示个数 改成4 试试
 for (let i = 0; i < childNum.value; i++) {
@@ -13,11 +13,13 @@ for (let i = 0; i < childNum.value; i++) {
     }
 }
 const showLabel = reactive({ '-1': true });
+for (let i = 0; i < childNum.value; i++) {
+    showLabel['MarginLabel' + i] = false;
+}
 const canDragSquare = ref(false);
 
 /**方法 */
-const dragType = ({ type, i, key }: { type: string; i: number, key: string }) => {
-    console.log('dragType ', type, i, key);
+const dragType = ({ type, key }: { type: string; key: string }) => {
     if (type === 'top') { // 从下移动到上面
         canDragSquare.value = true;
         showLabel[key] = true;
@@ -27,13 +29,15 @@ const dragType = ({ type, i, key }: { type: string; i: number, key: string }) =>
         showLabel[key] = false;
     }
 }
+const demoHeight = ref(600);
 </script>
 
+
 <template>
-    <div class="page-bk"></div>
+    <div class="page-bk" :style="{ height: demoHeight + 'px' }"></div>
     <!-- 外面再加一层可拖拽 -->
-    <ADragglebleMain :containerIndex="10" :childList="demoList" :childNum="childNum" :squareBottomHeight="200"
-        @dragType="dragType">
+    <ADragglebleMain :childList="demoList" :childNum="childNum" :squareBottomHeight="200" @dragType="dragType"
+        :mainContainerStyle="{ height: demoHeight }">
         <template v-slot:childSlot1>
             <MarginLabel :labelKey="'MarginLabel0'" :containerIndex="11" :height="200" :width="200"
                 :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel0']" :showRight="showLabel['MarginLabel0']"
@@ -103,9 +107,9 @@ const dragType = ({ type, i, key }: { type: string; i: number, key: string }) =>
 }
 
 .page-bk {
-    width: 100vw;
-    height: 100vh;
+    position: relative;
     background: #646cffaa;
+    // z-index: 12;
 }
 
 .logo {
@@ -121,4 +125,5 @@ const dragType = ({ type, i, key }: { type: string; i: number, key: string }) =>
 
 .logo.vue:hover {
     filter: drop-shadow(0 0 2em #42b883aa);
-}</style>
+}
+</style>

@@ -1,7 +1,7 @@
 ### a-draggleble-component
 - 一个可以托拽的vue3+typescript组件，主要应用场景：两个子空间的拖拽状态的相互转换
-- 有需要之后会增加其他拓展组件
-- 本组件致力于纯手敲代码，不引用任何依赖（尽力）
+- 有demo demo1 和 demo2 详细场景可用
+- 本组件完全开源，可以很容易迁移
 
 ### vue3项目引用
 #### 方式一：
@@ -38,10 +38,16 @@ pnpm i
 pnpm dev
 ```
 ### 效果展示
-* 例1 整体效果展示
-<demo src="../demo/main/demo1.vue" title="demo1" desc="整体展示"></demo>
+* 整体效果展示
+[demo](../demo/main/demo.md)
+* 例1 ADragglebleMain展示
+[demo1](../demo/main/demo1.md)
 * 例2 MarginLabel边框组件效果展示
-<demo src="../demo/margin-label/demo2.vue" title="demo1" desc="margin-label展示"></demo>
+[demo2](../demo/margin-label/demo2.md)
 ### 声明
 本项目只是模板项目，可以直接使用，也可以拷贝到自己的项目中进行自定义修改
+
+<style>
+
+</style>
 

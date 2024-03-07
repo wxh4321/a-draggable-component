@@ -1,26 +1,31 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import { moveDraggableElement } from '../utils'
-import { childProp, ListProps } from './type'
+import { childProp, ListProps, MainContainerStyleProps } from './type'
 import { EventBus } from '../utils/EventBus';
 type PartialChildProp = Partial<childProp>;
 
 const emmiter = EventBus();
+
 /**
  * 父级传参
  * childNum 子组件数量 可选
- * containerIndex 组件优先级 可选
  * childList 组件列表自定义参数
  */
+
 const props = withDefaults(defineProps<{
     childNum?: number,
-    containerIndex?: number | string,
+    squareBottomIndex?: number | string,
+    squareContentIndex?: number | string,
     squareBottomHeight?: number,
+    mainContainerStyle?: MainContainerStyleProps,
     childList?: ListProps,
 }>(), {
     childNum: 4,
-    containerIndex: 10,
+    squareBottomIndex: 10,
+    squareContentIndex: 10,
     squareBottomHeight: 200,
+    mainContainerStyle: { height: window.innerHeight, width: window.innerWidth, zIndex: 10 }
 })
 let defalutSquareBottomHeight = ref(props.squareBottomHeight)
 const comSquareBottomHeight = computed(() => {
@@ -47,7 +52,7 @@ const topSquareRef = ref(null)
 const bottomSquareRef = ref(null)
 
 const mainHeight = computed(() => {
-    return window.innerHeight - comSquareBottomHeight.value
+    return (props.mainContainerStyle as any).height - comSquareBottomHeight.value
 });
 
 // 定义方法
@@ -104,16 +109,20 @@ const sqaureDragEnter = (type: string,) => {
 
 </script>
 <template>
-    <div class="main-container" :style="{ zIndex: containerIndex }">
+    <div class="main-container" :style="{
+        height: mainContainerStyle?.height + 'px',
+        width: mainContainerStyle?.width ? mainContainerStyle?.width + 'px' : '100%',
+        zIndex: mainContainerStyle?.zIndex
+    }">
         <div class="square-content" ref="topSquareRef" @dragenter="(e: any) => { sqaureDragEnter('top', e) }"
-            :style="{ height: mainHeight + 'px' }">
+            :style="{ height: mainHeight + 'px', zIndex: squareContentIndex, }">
             <div :key="child.key" v-for="(child, i) in topList" @dragstart="(e: any) => { sqaureDragStart('top', e, i) }"
                 :draggable="topDraggable">
                 <slot :data="child" :name="child.name"></slot>
             </div>
         </div>
-        <div class="square-bottom" :style="{ height: comSquareBottomHeight + 'px' }" ref="bottomSquareRef"
-            @dragenter="(e: any) => { sqaureDragEnter('bottom', e) }">
+        <div class="square-bottom" :style="{ height: comSquareBottomHeight + 'px', zIndex: squareBottomIndex }"
+            ref="bottomSquareRef" @dragenter="(e: any) => { sqaureDragEnter('bottom', e) }">
             <div :key="child.key" v-for="(child, i) in list" @dragstart="(e: any) => { sqaureDragStart('bottom', e, i) }"
                 :draggable="bottomDraggable">
                 <slot :data="child" :name="child.name"></slot>
@@ -139,8 +148,6 @@ div {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     background: transparent;
 }
 
@@ -148,7 +155,7 @@ div {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 100vw;
+    width: inherit;
     background: red;
     display: flex;
     flex-direction: row;
@@ -157,8 +164,8 @@ div {
 }
 
 .square-bottom {
+    width: inherit;
     box-sizing: border-box;
-    width: 100vw;
     display: flex;
     align-items: center;
     // border: 2px solid #ccc;
@@ -166,8 +173,4 @@ div {
     bottom: 0px;
     left: 0px;
 }
-
-// .square-bottom:hover {
-//     border: 2px solid #000;
-// }
 </style>

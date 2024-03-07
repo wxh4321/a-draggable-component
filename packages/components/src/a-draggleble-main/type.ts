@@ -11,3 +11,9 @@ export interface childProp {
   [key: string]: any;
 }
 export type ListProps = Partial<childProp>[];
+
+export interface MainContainerStyleProps{
+  height:number;
+  width:number;
+  zIndex:number;
+}

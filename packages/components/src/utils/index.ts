@@ -30,7 +30,6 @@ export const mouseAddListener = (dom: any, callbackObj: Partial<CallbackProps>) 
   if (CallbackMap.has(dom)) {
     const list = CallbackMap.get(dom);
     list.push(callbackObj);
-    console.log('map list ',list.length)
     CallbackMap.set(dom,list);
   }
   else{
