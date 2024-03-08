@@ -15,7 +15,7 @@ withDefaults(defineProps<{ msg?: string }>(), {
     <a href="/#/demo1" target="_blank">demo1</a>
   </p>
   <p>
-    <a href="/#/demo2" target="_blank">demo2</a>
+    <a href="/#/demo2?width=full" target="_blank">demo2</a>
   </p>
   <p>
     Install

@@ -2,15 +2,22 @@
 import { MarginLabel } from "a-draggleble-component"
 import 'a-draggleble-component/dist/style.css'
 import { ref } from "vue";
-
+import qs from "qs";
+const params = qs.parse(window.location.hash.split('?')[1]);
+const { width = '' } = params || {};
 const demoHeight = ref(600);
 const demoWidth = ref(1039);
+
+if (width === 'full') {
+  demoWidth.value = window.innerWidth - 18;
+}
 
 </script>
 
 <template>
   <div class="page-container">
-    <MarginLabel :containerIndex="12" :height="demoHeight" :width="demoWidth" :top="demoHeight * 0.6">
+    <MarginLabel :containerIndex="12" :height="demoHeight" :width="demoWidth" :top="demoHeight * 0.6" :showLeft="false"
+      :showRight="false" :showBottom="false">
       <template v-slot:default>
         <div class="page-bk">
           <MarginLabel :containerIndex="11" :height="200" :width="200" :canDragSquare="true">
