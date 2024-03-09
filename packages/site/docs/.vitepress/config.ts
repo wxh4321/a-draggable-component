@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/a-draggleble-component/',
   title: "A Draggleble Component",
   description: "一个可拖拽组件 基于vue3",
-  head: [['link', { rel: 'icon', type:'image/svg+xml',href: '/logo.svg' }]], 
+  head: [['link', { rel: 'icon', type:'image/svg+xml',href: '/a-draggleble-component/logo.svg' }]], 
   themeConfig: {
     logo: '/logo.svg',
     siteTitle: "A Draggleble Component",
