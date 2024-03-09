@@ -2,13 +2,13 @@ import { defineConfig } from "vitepress";
 import vitePluginVitepressDemo from "vite-plugin-vitepress-demo";
 export default defineConfig({
   //   appearance: false, // 夜间模式切换
-  base: '/a-draggleble-component/',
-  title: "A Draggleble Component",
+  base: '/a-draggable-component/',
+  title: "A Draggable Component",
   description: "一个可拖拽组件 基于vue3",
-  head: [['link', { rel: 'icon', type:'image/svg+xml',href: '/a-draggleble-component/logo.svg' }]], 
+  head: [['link', { rel: 'icon', type:'image/svg+xml',href: '/a-draggable-component/logo.svg' }]], 
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: "A Draggleble Component",
+    siteTitle: "A Draggable Component",
   },
   vite: {
     plugins: [

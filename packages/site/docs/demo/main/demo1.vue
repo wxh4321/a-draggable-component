@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { ADragglebleMain } from "a-draggleble-component"
-import { ListProps } from "a-draggleble-component/dist/a-draggleble-main/type.d"
-import 'a-draggleble-component/dist/style.css'
+import { ADraggableMain } from "a-draggable-component"
+import { ListProps } from "a-draggable-component/dist/a-draggable-main/type.d"
+import 'a-draggable-component/dist/style.css'
 
 const demoList: ListProps = reactive([])
 const childNum = ref(3) // 自定义显示个数 改成4 试试
@@ -18,7 +18,7 @@ const demoHeight = ref(600);
 
 <template>
   <div class="page-bk" :style="{ height: demoHeight + 'px' }"></div>
-  <ADragglebleMain :childList="demoList" :childNum="childNum" :mainContainerStyle="{ height: demoHeight }">
+  <ADraggableMain :childList="demoList" :childNum="childNum" :mainContainerStyle="{ height: demoHeight }">
     <template v-slot:childSlot1>
       <div class="demo-child demo-child-1">默认</div>
     </template>
@@ -31,7 +31,7 @@ const demoHeight = ref(600);
     <template v-slot:childSlot4="{ data }">
       <div class="demo-child demo-child-4">自定义传参: {{ data.pro }}</div>
     </template>
-  </ADragglebleMain>
+  </ADraggableMain>
 </template>
 
 <style lang="less" scoped>

@@ -2,10 +2,10 @@
 layout: home
 
 title: 一个可拖拽的组件
-titleTemplate: a-draggleble-component
+titleTemplate: a-draggable-component
 
 hero:
-  name: a-draggleble-component
+  name: a-draggable-component
   text: 一个可拖拽的组件,支持两个空间相互穿梭，高度自定义
   tagline: Simple, powerful, and fast.
   actions:
@@ -14,7 +14,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://gitee.com/wxh4321/a-draggleble-component
+      link: https://gitee.com/wxh4321/a-draggable-component
   image:
     src: /logo.svg
     alt: logo

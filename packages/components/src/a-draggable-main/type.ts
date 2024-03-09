@@ -1,7 +1,7 @@
 import { ExtractPropTypes } from "vue";
-import ADragglebleMain from "./index.vue";
+import ADraggableMain from "./index.vue";
 
-export type ADragglebleMainProps = ExtractPropTypes<typeof ADragglebleMain>;
+export type ADraggableMainProps = ExtractPropTypes<typeof ADraggableMain>;
 
 // 接口定义
 export interface childProp {

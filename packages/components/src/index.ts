@@ -1,12 +1,12 @@
 import type { App } from "vue";
 import "virtual:svg-icons-register";
 import SvgIcon from './svgIcon/index.vue';
-import ADragglebleMain from "./a-draggleble-main/index.vue";
+import ADraggableMain from "./a-draggable-main/index.vue";
 import MarginLabel from './margin-label/index.vue';
 
 const components:any = {
     SvgIcon,
-    ADragglebleMain,
+    ADraggableMain,
     MarginLabel
 }
 export default{
@@ -18,6 +18,6 @@ export default{
 }
 export {
     SvgIcon,
-    ADragglebleMain,
+    ADraggableMain,
     MarginLabel
 }

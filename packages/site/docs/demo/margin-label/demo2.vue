@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { MarginLabel } from "a-draggleble-component"
-import 'a-draggleble-component/dist/style.css'
+import { MarginLabel } from "a-draggable-component"
+import 'a-draggable-component/dist/style.css'
 import { ref } from "vue";
 import qs from "qs";
 const windowHash = typeof window === 'object' ? window.location.hash : '';

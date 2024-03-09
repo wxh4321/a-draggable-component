@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue"
-import { ADragglebleMain } from "a-draggleble-component"
-import { MarginLabel } from "a-draggleble-component"
-import { ListProps } from "a-draggleble-component/dist/a-draggleble-main/type.d"
-import 'a-draggleble-component/dist/style.css'
+import { ADraggableMain } from "a-draggable-component"
+import { MarginLabel } from "a-draggable-component"
+import { ListProps } from "a-draggable-component/dist/a-draggable-main/type.d"
+import 'a-draggable-component/dist/style.css'
 const demoList: ListProps = reactive([])
 const childNum = ref(3) // 自定义显示个数 改成4 试试
 for (let i = 0; i < childNum.value; i++) {
@@ -36,13 +36,13 @@ const demoHeight = ref(600);
 <template>
     <div class="page-bk" :style="{ height: demoHeight + 'px' }"></div>
     <!-- 外面再加一层可拖拽 -->
-    <ADragglebleMain :childList="demoList" :childNum="childNum" :squareBottomHeight="200" @dragType="dragType"
+    <ADraggableMain :childList="demoList" :childNum="childNum" :squareBottomHeight="200" @dragType="dragType"
         :mainContainerStyle="{ height: demoHeight }">
         <template v-slot:childSlot1>
             <MarginLabel :labelKey="'MarginLabel0'" :containerIndex="11" :height="200" :width="200"
-                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel0']" :showRight="showLabel['MarginLabel0']"
-                :showTop="showLabel['MarginLabel0']" :showBottom="showLabel['MarginLabel0']"
-                :componentStyle="{ left: (0 * 200) + 'px' }">
+                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel0']"
+                :showRight="showLabel['MarginLabel0']" :showTop="showLabel['MarginLabel0']"
+                :showBottom="showLabel['MarginLabel0']" :componentStyle="{ left: (0 * 200) + 'px' }">
                 <template v-slot:default>
                     <div class="demo-child demo-child-1">默认</div>
                 </template>
@@ -50,9 +50,9 @@ const demoHeight = ref(600);
         </template>
         <template v-slot:childSlot2="{ data }">
             <MarginLabel :labelKey="'MarginLabel1'" :containerIndex="11" :height="200" :width="200"
-                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel1']" :showRight="showLabel['MarginLabel1']"
-                :showTop="showLabel['MarginLabel1']" :showBottom="showLabel['MarginLabel1']"
-                :componentStyle="{ left: (1 * 200) + 'px' }">
+                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel1']"
+                :showRight="showLabel['MarginLabel1']" :showTop="showLabel['MarginLabel1']"
+                :showBottom="showLabel['MarginLabel1']" :componentStyle="{ left: (1 * 200) + 'px' }">
                 <template v-slot:default>
                     <div class="demo-child demo-child-2">传参: {{ data.name }}</div>
                 </template>
@@ -60,9 +60,9 @@ const demoHeight = ref(600);
         </template>
         <template v-slot:childSlot3="{ data }">
             <MarginLabel :labelKey="'MarginLabel2'" :containerIndex="11" :height="200" :width="200"
-                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel2']" :showRight="showLabel['MarginLabel2']"
-                :showTop="showLabel['MarginLabel2']" :showBottom="showLabel['MarginLabel2']"
-                :componentStyle="{ left: (2 * 200) + 'px' }">
+                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel2']"
+                :showRight="showLabel['MarginLabel2']" :showTop="showLabel['MarginLabel2']"
+                :showBottom="showLabel['MarginLabel2']" :componentStyle="{ left: (2 * 200) + 'px' }">
                 <template v-slot:default>
                     <div class="demo-child demo-child-3">自定义传参: {{ data.age }}</div>
                 </template>
@@ -70,15 +70,15 @@ const demoHeight = ref(600);
         </template>
         <template v-slot:childSlot4="{ data }">
             <MarginLabel :labelKey="'MarginLabel3'" :containerIndex="11" :height="200" :width="200"
-                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel3']" :showRight="showLabel['MarginLabel3']"
-                :showTop="showLabel['MarginLabel3']" :showBottom="showLabel['MarginLabel3']"
-                :componentStyle="{ left: (3 * 200) + 'px' }">
+                :canDragSquare="canDragSquare" :showLeft="showLabel['MarginLabel3']"
+                :showRight="showLabel['MarginLabel3']" :showTop="showLabel['MarginLabel3']"
+                :showBottom="showLabel['MarginLabel3']" :componentStyle="{ left: (3 * 200) + 'px' }">
                 <template v-slot:default>
                     <div class="demo-child demo-child-4">自定义传参: {{ data.pro }}</div>
                 </template>
             </MarginLabel>
         </template>
-    </ADragglebleMain>
+    </ADraggableMain>
 </template>
 
 <style lang="less" scoped>

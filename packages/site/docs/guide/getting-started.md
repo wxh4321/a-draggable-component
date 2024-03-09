@@ -1,4 +1,4 @@
-### a-draggleble-component
+### a-draggable-component
 - 一个可以托拽的vue3+typescript组件，主要应用场景：两个子空间的拖拽状态的相互转换
 - 有demo demo1 和 demo2 详细场景可用
 - 本组件完全开源，可以很容易迁移
@@ -8,24 +8,24 @@
 
 在main.ts文件中添加如下代码：
 ```ts
-import 'a-draggleble-component/dist/style.css'
-import dragglebleComponents from 'draggleble-components'
+import 'a-draggable-component/dist/style.css'
+import draggableComponents from 'draggable-components'
 // const app = createApp(App)
-app.use(dragglebleComponents)
+app.use(draggableComponents)
 ```
 #### 方式二：
 在main.ts文件中添加如下代码：
 ```ts
-import 'a-draggleble-component/dist/style.css'
+import 'a-draggable-component/dist/style.css'
 ```
 在.vue文件中导入：
 ```vue
 <script setup lang="ts">
-import { ADragglebleMain }  from "a-draggleble-component"
+import { ADraggableMain }  from "a-draggable-component"
 </script>
 
 <template>
-<ADragglebleMain/>
+<ADraggableMain/>
 </template>
 ```
 
@@ -40,7 +40,7 @@ pnpm dev
 ### 效果展示
 * 整体效果展示
 [demo](../demo/main/demo.md)
-* 例1 ADragglebleMain展示
+* 例1 ADraggableMain展示
 [demo1](../demo/main/demo1.md)
 * 例2 MarginLabel边框组件效果展示
 [demo2](../demo/margin-label/demo2.md)

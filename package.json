@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "description": "一个可以托拽的vue3+typescript组件，主要应用场景：两个子空间的拖拽状态的相互转换",
   "scripts": {
-    "build": "pnpm run --filter a-draggleble-component build",
-    "watch": "pnpm run --filter a-draggleble-component watch",
+    "build": "pnpm run --filter a-draggable-component build",
+    "watch": "pnpm run --filter a-draggable-component watch",
     "dev:docs": "pnpm run --filter site dev:docs",
     "dev": "pnpm run --filter site dev",
     "build:docs": "pnpm run --filter site build:docs",
     "serve:docs": "pnpm run --filter site serve:docs",
-    "pub": "pnpm build && pnpm publish --filter a-draggleble-component",
+    "pub": "pnpm build && pnpm publish --filter a-draggable-component",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "vue3",
     "ts",
-    "draggleble"
+    "draggable"
   ],
   "author": "xinhong.wang",
   "license": "ISC",

@@ -1,4 +1,4 @@
-import { ListProps } from "@/a-draggleble-main/type";
+import { ListProps } from "@/a-draggable-main/type";
 import { CSSProperties, Ref } from "vue";
 
 // 接口定义

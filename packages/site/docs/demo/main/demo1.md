@@ -1,4 +1,4 @@
-<demo src="./demo1.vue" title="demo1" desc="adraggleble-main展示"></demo>
+<demo src="./demo1.vue" title="demo1" desc="adraggable-main展示"></demo>
 <style>
     body{
         position:relative;
