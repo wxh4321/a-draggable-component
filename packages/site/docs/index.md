@@ -14,10 +14,10 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      link: https://gitee.com/wxh4321/a-draggleble-component
   image:
-    src: /vitepress-logo-large.webp
-    alt: VitePress
+    src: /logo.svg
+    alt: logo
 
 features:
   - icon: 📝
