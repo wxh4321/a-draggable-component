@@ -38,11 +38,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 16
-          cache: pnpm # 或 pnpm / yarn
+          cache: npm # 或 pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Install pnpm
+        run: npm i -g pnpm
       - name: Install dependencies
-        run: pnpm install # 或 pnpm install / yarn install / bun install
+        run: pnpm i # 或 pnpm install / yarn install / bun install
       - name: build components
         run: pnpm build
       - name: Build with VitePress
@@ -64,3 +66,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
