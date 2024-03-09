@@ -24,8 +24,8 @@ jobs:
 
       - name: Build
         run: |
-          npm install
           npm install -g pnpm
+          pnpm i
           pnpm build
           pnpm build:docs
           pnpm serve:docs
