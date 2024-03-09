@@ -12,7 +12,6 @@ const emmiter = EventBus();
  * childNum 子组件数量 可选
  * childList 组件列表自定义参数
  */
-
 const props = withDefaults(defineProps<{
     childNum?: number,
     squareBottomIndex?: number | string,
@@ -25,7 +24,7 @@ const props = withDefaults(defineProps<{
     squareBottomIndex: 10,
     squareContentIndex: 10,
     squareBottomHeight: 200,
-    mainContainerStyle: { height: window.innerHeight, width: window.innerWidth, zIndex: 10 }
+    mainContainerStyle: { height: 600, width: 1000, zIndex: 10 }
 })
 let defalutSquareBottomHeight = ref(props.squareBottomHeight)
 const comSquareBottomHeight = computed(() => {
@@ -35,7 +34,7 @@ const comSquareBottomHeight = computed(() => {
             || (height as string).includes('vh')
         ) { // 支持百分号 vh等
             const num = (height as string).replace('vh', '').replace('%', '')
-            return window.innerHeight * (Number(num) / 100);
+            return windowHeight * (Number(num) / 100);
         }
         else {
             return 200;

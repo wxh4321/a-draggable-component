@@ -3,13 +3,15 @@ import { MarginLabel } from "a-draggleble-component"
 import 'a-draggleble-component/dist/style.css'
 import { ref } from "vue";
 import qs from "qs";
-const params = qs.parse(window.location.hash.split('?')[1]);
+const windowHash = typeof window === 'object' ? window.location.hash : '';
+const windowHeight = typeof window === 'object' ? window.innerWidth : 600;
+const params = qs.parse(windowHash.split('?')[1]);
 const { width = '' } = params || {};
 const demoHeight = ref(600);
 const demoWidth = ref(1039);
 
 if (width === 'full') {
-  demoWidth.value = window.innerWidth - 18;
+  demoWidth.value = windowHeight - 18;
 }
 
 </script>
